@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>交大校园码</title>
+<script> 
+		function show(){ 
+		var date = new Date(); //日期对象 
+		var now = ""; 
+		var m = ""; 
+		var d = ""; 
+		var H = ""; 
+		var M = ""; 
+		var S = ""; 
+
+		m = date.getMonth()+1;
+		m = m>9?m:"0"+m; 
+		d = date.getDate();
+		d = d>9?d:"0"+d;
+		data_a = m + "月" + d + "日";
+
+		H = date.getHours();
+		H = H>9?H:"0"+H;	
+		M = date.getMinutes();
+		M = M>9?M:"0"+M;
+		S = date.getSeconds()
+		S = S>9?S:"0"+S;
+		data_b = H+":" +M+":"+ S; 
+
+		document.getElementById("aDiv").innerHTML = data_a; 
+		document.getElementById("bDiv").innerHTML = data_b; 
+
+		setTimeout("show()",1000); 
+	} 
+	</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+SC:100,300,400,500,700,900">
+</head>
+
+<style type="text/css">
+body {
+    margin: 0;
+    padding: 0;
+}
+.big {
+    display: block;
+    min-height: 120px;
+    position: relative;
+    width: 100%;
+}
+.left2 {
+    height: 120px;
+    width: 500px;
+    position: absolute;
+    bottom: 0px;
+    left: 80px;
+}
+.right2 {
+    width: 450px;
+    height: 120px;
+    position: absolute;
+    left: 450px;
+    bottom: 25px;
+}
+</style>
+<body onload="show()" >
+<div> <img src="./pic/hkq_1.jpg" width="100%" height="100%">
+  <div class="big">
+    <div class="left2" >
+      <div style="font-size:75px;font-family: Noto Sans SC;font-weight: 500;" id="aDiv"></div>
+    </div>
+    <div class="right2">
+      <div style="font-size:100px;font-family: Noto Sans SC;font-weight: 500" id="bDiv"></div>
+    </div>
+  </div>
+  <img src="./pic/down_yjs.jpg" width="100%" height="100%"> </div>
+</body>
+</html>
